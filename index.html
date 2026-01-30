@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN AVIA Support F.Z.E. - Aviation Trading</title>
+    <link rel="icon" href="avia1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-image {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        
+        .company-subtitle {
+            font-size: 0.9rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 400;
+            max-width: 400px;
+            text-align: right;
+            line-height: 1.4;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .company-info {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .company-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #1a2980, #26d0ce);
+        }
+        
+        .section-title {
+            color: #1a2980;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .description {
+            font-size: 1.15rem;
+            color: #444;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #1a2980;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-text {
+            color: #555;
+            font-size: 1rem;
+            text-align: left;
+        }
+        /* Contact Section */
+        .contact-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .contact-title {
+            color: #1a2980;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+        
+        .contact-icon {
+            font-size: 1.4rem;
+            color: #26d0ce;
+            margin-right: 12px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #1a2980;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo-img {
+            height: 50px;
+        }
+        
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+        /* Сделать заголовки одинаковыми */
+.feature-title, .contact-title {
+    font-size: 1.6rem;          /* Одинаковый размер */
+    color: #1a2980;             /* Одинаковый цвет */
+    font-weight: 600;           /* Одинаковая толщина */
+    text-align: center;         /* Центрирование */
+    margin-bottom: 20px;        /* Одинаковый отступ снизу */
+    letter-spacing: 0.03em;     /* Одинаковый межбуквенный интервал */
+    line-height: 1.4;           /* Одинаковая высота строки */
+    text-transform: none;       /* Без преобразования регистра */
+    font-family: inherit;       /* Наследование шрифта */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .feature-title, .contact-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-title, .contact-title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+}
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .tagline {
+                text-align: center;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px 0;
+            }
+            
+            .logo-image {
+                height: 60px;
+            }
+            
+            .company-name {
+                font-size: 1.6rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .company-info {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .description {
+                font-size: 1.05rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .contact-section {
+                padding: 30px 20px;
+            }
+            
+            .contact-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo-image {
+                height: 240px;
+            }
+            
+            .company-name {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            
+            .company-subtitle {
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .footer-logo {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .footer-logo-img {
+                height: 240px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .company-name {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .logo-image {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <!-- Логотип компании AN AVIA SUPPORT -->
+                    <img src="avia1.png" class="logo-image" alt="AN AVIA Support F.Z.E.">
+                    <div class="logo-text">
+                        <div class="company-name">AN AVIA Support F.Z.E.</div>
+                        <div class="company-subtitle">Aviation Trading</div>
+                    </div>
+                </div>
+                <div class="tagline">Your reliable partner in aviation</div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <section class="company-info">
+                <h1 class="section-title">Reliable Partner in Aviation</h1>
+                <p class="description">
+                    <strong>AN AVIA Support F.Z.E.</strong> is a dynamically growing international company specializing in aviation. We supply high-quality components and continuously expand our range to meet the growing industry demand.
+                </p>
+                <p class="description">
+                    With our extensive network of suppliers and industry expertise, we ensure timely delivery of certified components that meet the highest safety and quality standards. Our commitment to excellence makes us a trusted partner for airlines, MROs, and operators worldwide.
+                </p>
+            </section>
+            
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-cogs feature-icon"></i>
+                    <h3 class="feature-title">Quality Assurance</h3>
+                    <p class="feature-text">All our components are sourced from certified suppliers and undergo rigorous quality checks to ensure compliance with aviation safety standards and regulations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3 class="feature-title">Global Network</h3>
+                    <p class="feature-text">We have established a robust global supply chain network that enables us to source and deliver aviation components efficiently to clients worldwide.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3 class="feature-title">Continuous Expansion</h3>
+                    <p class="feature-text">We continuously expand our range and services to meet the evolving demands of the aviation industry and our clients' specific needs.</p>
+                </div>
+            </section>
+            
+            <section class="contact-section">
+                <h2 class="contact-title">Contact Information</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>anavia.fze@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span>+971 04 566 8746</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <a href="https://www.google.com/maps?q=67PJ+R28+AL+HANAA+CENTER+-+Al+Mankhool+Rd+-+Al+Jafiliya+-+Dubai&ftid=0x3e5f42fd20bfb091:0x2bd74b988abc785b&entry=gps&shh=CAE&lucs=,94297699,94275415,94284469,94231188,94280568,47071704,94218641,94282134,94286869&g_ep=CAISEjI2LjAzLjEuODU1MjUwMDQwMBgAIIgnKlEsOTQyOTc2OTksOTQyNzU0MTUsOTQyODQ0NjksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsOTQyODY4NjlCAkFF&skid=94856267-87f1-4b31-bdfa-3c97dd416d47&g_st=iw"><span>Dubai, UAE</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <!-- Логотип в футере -->
+                    <img src="avia1.png" class="footer-logo-img" alt="AN AVIA Support F.Z.E.">
+                    <div class="logo-text">
+                        <div class="company-name">AN AVIA Support F.Z.E.</div>
+                    </div>
+                </div>
+                <p class="footer-text">&copy; 2023 AN AVIA Support F.Z.E. All rights reserved.</p>
+                <p class="footer-text">Your reliable partner in aviation</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
